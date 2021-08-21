@@ -1,0 +1,37 @@
+@import "variables";
+@import "functions";
+@import "base";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $sora;
+}
+
+.container {
+  min-height: 100vh;
+  @include interpolate(padding, $min-width, $max-width, 40px, 100px);
+  background: $metal-gradient;
+
+  > .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    @include interpolate(margin-left, $min-width, $max-width, -25px, -100px);
+    @include interpolate(margin-top, $min-width, $max-width, -25px, -100px);
+
+    > * {
+      @include interpolate(margin-left, $min-width, $max-width, 25px, 100px);
+      @include interpolate(margin-top, $min-width, $max-width, 25px, 100px);
+    }
+  }
+}
+
+@import "sections/content";
+@import "sections/calculator";
+@import "sections/compensation-form";
+@import "sections/compensation-result";

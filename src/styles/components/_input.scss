@@ -1,0 +1,46 @@
+.type-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient($white, $white) padding-box,
+    $metal-light-gradient border-box;
+  border: 2px solid transparent;
+  border-radius: 4px;
+
+  input {
+    all: unset;
+    flex: 1;
+  }
+
+  .type {
+    margin-left: 10px;
+    font-weight: bold;
+  }
+
+  input,
+  .type {
+    @include interpolate(font-size, $min-width, $max-width, 14px, 18px);
+    @include interpolate(line-height, $min-width, $max-width, 25px, 30px);
+  }
+}
+
+.submit-button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px 40px;
+
+  background: linear-gradient(90deg, #911812 0%, #e1261c 100%);
+  border-radius: 30px;
+
+  color: #ffffff;
+
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}

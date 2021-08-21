@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap");
+
+// Fonts
+$sora: "Sora", sans-serif;
+
+// Screen widths
+$min-width: 320px;
+$max-width: 1280px;
+
+// Colors
+$metal-dark: #111317;
+$metal: #2b303a;
+$metal-middle: #7a818e;
+$metal-light: #e9edf4;
+$white: #fff;
+$dark-red: #911812;
+$red: #e1261c;
+
+// Gradients
+$metal-gradient: linear-gradient(90deg, $metal 0%, #3f4756 100%);
+$metal-light-gradient: linear-gradient(90deg, #d3dae8 0%, #a7b7d8 100%);
+$red-gradient: linear-gradient(90deg, $dark-red 0%, $red 100%);

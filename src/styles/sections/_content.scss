@@ -1,0 +1,91 @@
+.content {
+  flex: 2;
+  color: $white;
+
+  > * + * {
+    margin-top: 2.5rem;
+  }
+
+  .section {
+    > * + * {
+      margin-top: 1.25rem;
+    }
+  }
+
+  .points {
+    li {
+      position: relative;
+      list-style: none;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 4px;
+        margin: 0 9px 0 5px;
+
+        background: $red-gradient;
+      }
+    }
+    .sublist {
+      li {
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 12px;
+          height: 4px;
+          margin: 0 13px 0 5px;
+
+          background: linear-gradient(90deg, #d3dae8 0%, #a7b7d8 100%);
+        }
+      }
+    }
+  }
+
+  .content-image-box {
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -2.5rem;
+      margin-top: -1.25rem;
+
+      > * {
+        margin-left: 2.5rem;
+        margin-top: 1.25rem;
+      }
+
+      .content-box {
+        flex: 8;
+        min-width: 240px;
+
+        > * + * {
+          margin-top: 1.25rem;
+        }
+      }
+
+      .image-box {
+        // flex: 5;
+        width: 240px;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  em {
+    text-decoration: underline;
+    font-style: normal;
+    color: $red;
+  }
+
+  p,
+  li {
+    @include interpolate(font-size, $min-width, $max-width, 15px, 18px);
+    @include interpolate(line-height, $min-width, $max-width, 20px, 30px);
+  }
+}

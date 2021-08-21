@@ -1,0 +1,36 @@
+.calculator {
+  position: relative;
+  background: $white;
+  width: 320px;
+  clip-path: polygon(
+    20px 0,
+    calc(100% - 20px) 0,
+    100% 20px,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    20px 100%,
+    0 calc(100% - 20px),
+    0 20px
+  );
+  padding: 5rem 1.25rem;
+  color: $metal-dark;
+
+  > * + * {
+    margin-top: 1.25rem;
+  }
+
+  p,
+  label {
+    @include interpolate(font-size, $min-width, $max-width, 12px, 14px);
+    @include interpolate(line-height, $min-width, $max-width, 15px, 20px);
+  }
+
+  hr {
+    position: absolute;
+    right: 0;
+    left: 0;
+    border: none;
+    height: 1px;
+    background: $metal-light;
+  }
+}

@@ -1,0 +1,97 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  @include interpolate(font-size, $min-width, $max-width, 32px, 40px);
+  @include interpolate(line-height, $min-width, $max-width, 45px, 50px);
+}
+
+h2 {
+  @include interpolate(font-size, $min-width, $max-width, 28px, 32px);
+  @include interpolate(line-height, $min-width, $max-width, 30px, 35px);
+}
+
+h3 {
+  @include interpolate(font-size, $min-width, $max-width, 24px, 28px);
+  @include interpolate(line-height, $min-width, $max-width, 25px, 30px);
+}
+
+h4 {
+  @include interpolate(font-size, $min-width, $max-width, 20px, 24px);
+  @include interpolate(line-height, $min-width, $max-width, 20px, 25px);
+}
+
+h5 {
+  @include interpolate(font-size, $min-width, $max-width, 16px, 20px);
+  @include interpolate(line-height, $min-width, $max-width, 16px, 20px);
+}
+
+h6 {
+  @include interpolate(font-size, $min-width, $max-width, 12px, 16px);
+  @include interpolate(line-height, $min-width, $max-width, 12px, 16px);
+}
+
+input {
+  all: unset;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient($white, $white) padding-box,
+    $metal-light-gradient border-box;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  padding: 10px;
+
+  @include interpolate(font-size, $min-width, $max-width, 14px, 18px);
+  @include interpolate(line-height, $min-width, $max-width, 25px, 30px);
+
+  color: $metal-dark;
+
+  &[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+
+    &:checked {
+      content: url("../images/check.svg");
+      fill: red;
+      background-color: #34495e;
+    }
+  }
+
+  &[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+ol ul,
+ol ol,
+ul ul,
+ul ol {
+  padding-inline-start: 30px;
+}
+
+@import "./components/input-box";
+@import "./components/input";
+@import "./components/result";
+@import "./components/label";

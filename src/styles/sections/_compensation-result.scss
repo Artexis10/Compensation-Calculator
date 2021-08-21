@@ -1,0 +1,36 @@
+.compensation-result {
+  .results {
+    padding: 20px 0;
+
+    > .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -1.25rem;
+      margin-top: -1.25rem;
+
+      > * {
+        margin-left: 1.25rem;
+        margin-top: 1.25rem;
+      }
+    }
+  }
+
+  .total {
+    padding-top: 20px;
+    text-align: center;
+
+    > * + * {
+      margin-top: 5px;
+    }
+
+    .compensation-days {
+      @include interpolate(font-size, $min-width, $max-width, 12px, 14px);
+      @include interpolate(line-height, $min-width, $max-width, 13px, 15px);
+    }
+    .compensation-total {
+      font-weight: bold;
+      @include interpolate(font-size, $min-width, $max-width, 18px, 24px);
+      @include interpolate(line-height, $min-width, $max-width, 24px, 30px);
+    }
+  }
+}
